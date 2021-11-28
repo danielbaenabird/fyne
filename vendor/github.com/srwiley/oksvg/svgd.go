@@ -11,6 +11,7 @@
 package oksvg
 
 import (
+	"fmt"
 	"io"
 	"os"
 	"strconv"
@@ -59,16 +60,17 @@ type (
 		Defs         map[string][]definition
 		SVGPaths     []SvgPath
 		Transform    rasterx.Matrix2D
+		classes      map[string]styleAttribute
 	}
 
 	// IconCursor is used while parsing SVG files
 	IconCursor struct {
 		PathCursor
-		icon                                    *SvgIcon
-		StyleStack                              []PathStyle
-		grad                                    *rasterx.Gradient
-		inTitleText, inDescText, inGrad, inDefs bool
-		currentDef                              []definition
+		icon                                                 *SvgIcon
+		StyleStack                                           []PathStyle
+		grad                                                 *rasterx.Gradient
+		inTitleText, inDescText, inGrad, inDefs, inDefsStyle bool
+		currentDef                                           []definition
 	}
 
 	// definition is used to store what's given in a def tag
@@ -76,6 +78,9 @@ type (
 		ID, Tag string
 		Attrs   []xml.Attr
 	}
+
+	// styleAttribute describes draw options, such as {"fill":"black"; "stroke":"white"}
+	styleAttribute = map[string]string
 )
 
 // DefaultStyle sets the default PathStyle to fill black, winding rule,
@@ -169,12 +174,37 @@ func (svgp *SvgPath) DrawTransformed(r *rasterx.Dasher, opacity float64, t raste
 	}
 }
 
+// GetFillColor returns the fill color of the SvgPath if one is defined and otherwise returns colornames.Black
+func (svgp *SvgPath) GetFillColor() color.Color {
+	return getColor(svgp.fillerColor)
+}
+
+// GetLineColor returns the stroke color of the SvgPath if one is defined and otherwise returns colornames.Black
+func (svgp *SvgPath) GetLineColor() color.Color {
+	return getColor(svgp.linerColor)
+}
+
+// SetFillColor sets the fill color of the SvgPath
+func (svgp *SvgPath) SetFillColor(clr color.Color) {
+	svgp.fillerColor = clr
+}
+
+// SetLineColor sets the line color of the SvgPath
+func (svgp *SvgPath) SetLineColor(clr color.Color) {
+	svgp.linerColor = clr
+}
+
 // ParseSVGColorNum reads the SFG color string e.g. #FBD9BD
 func ParseSVGColorNum(colorStr string) (r, g, b uint8, err error) {
 	colorStr = strings.TrimPrefix(colorStr, "#")
 	var t uint64
-	if len(colorStr) != 6 {
-		// SVG specs say duplicate characters in case of 3 digit hex number
+	// This error check is thanks to githhub's mauritsderuiter95 identification of the a potential panic.
+	if len(colorStr) != 6 { // This is either a 3 character color or an invalid format
+		if len(colorStr) != 3 {
+			err = fmt.Errorf("color string %s is not length 3 or 6 as required by SVG specification",
+				colorStr)
+			return
+		}
 		colorStr = string([]byte{colorStr[0], colorStr[0],
 			colorStr[1], colorStr[1], colorStr[2], colorStr[2]})
 	}
@@ -204,7 +234,7 @@ func ParseSVGColor(colorStr string) (color.Color, error) {
 		return color.NRGBA{0, 0, 0, 255}, nil
 	}
 	switch v {
-	case "none":
+	case "none", "":
 		// nil signals that the function (fill or stroke) is off;
 		// not the same as black
 		return nil, nil
@@ -232,6 +262,70 @@ func ParseSVGColor(colorStr string) (color.Color, error) {
 		}
 		return color.NRGBA{cvals[0], cvals[1], cvals[2], 0xFF}, nil
 	}
+
+	cStr = strings.TrimPrefix(colorStr, "hsl(")
+	if cStr != colorStr {
+		cStr := strings.TrimSuffix(cStr, ")")
+		vals := strings.Split(cStr, ",")
+		if len(vals) != 3 {
+			return color.NRGBA{}, errParamMismatch
+		}
+
+		H, err := strconv.ParseInt(strings.TrimSpace(vals[0]), 10, 64)
+		if err != nil {
+			return color.NRGBA{}, fmt.Errorf("invalid hue in hsl: '%s' (%s)", vals[0], err)
+		}
+
+		S, err := strconv.ParseFloat(strings.TrimSpace(vals[1][:len(vals[1])-1]), 64)
+		if err != nil {
+			return color.NRGBA{}, fmt.Errorf("invalid saturation in hsl: '%s' (%s)", vals[1], err)
+		}
+		S = S / 100
+
+		L, err := strconv.ParseFloat(strings.TrimSpace(vals[2][:len(vals[2])-1]), 64)
+		if err != nil {
+			return color.NRGBA{}, fmt.Errorf("invalid lightness in hsl: '%s' (%s)", vals[2], err)
+		}
+		L = L / 100
+
+		C := (1 - math.Abs((2*L)-1)) * S
+		X := C * (1 - math.Abs(math.Mod((float64(H)/60), 2)-1))
+		m := L - C/2
+
+		var rp, gp, bp float64
+		if H < 60 {
+			rp, gp, bp = float64(C), float64(X), float64(0)
+		} else if H < 120 {
+			rp, gp, bp = float64(X), float64(C), float64(0)
+		} else if H < 180 {
+			rp, gp, bp = float64(0), float64(C), float64(X)
+		} else if H < 240 {
+			rp, gp, bp = float64(0), float64(X), float64(C)
+		} else if H < 300 {
+			rp, gp, bp = float64(X), float64(0), float64(C)
+		} else {
+			rp, gp, bp = float64(C), float64(0), float64(X)
+		}
+
+		r, g, b := math.Round((rp+m)*255), math.Round((gp+m)*255), math.Round((bp+m)*255)
+		if r > 255 {
+			r = 255
+		}
+		if g > 255 {
+			g = 255
+		}
+		if b > 255 {
+			b = 255
+		}
+
+		return color.NRGBA{
+			uint8(r),
+			uint8(g),
+			uint8(b),
+			0xFF,
+		}, nil
+	}
+
 	if colorStr[0] == '#' {
 		r, g, b, err := ParseSVGColorNum(colorStr)
 		if err != nil {
@@ -476,10 +570,13 @@ func (c *IconCursor) readStyleAttr(curStyle *PathStyle, k, v string) error {
 // direct fill and opacity attributes.
 func (c *IconCursor) PushStyle(attrs []xml.Attr) error {
 	var pairs []string
+	className := ""
 	for _, attr := range attrs {
 		switch strings.ToLower(attr.Name.Local) {
 		case "style":
 			pairs = append(pairs, strings.Split(attr.Value, ";")...)
+		case "class":
+			className = attr.Value
 		default:
 			pairs = append(pairs, attr.Name.Local+":"+attr.Value)
 		}
@@ -498,6 +595,7 @@ func (c *IconCursor) PushStyle(attrs []xml.Attr) error {
 			}
 		}
 	}
+	c.adaptClasses(&curStyle, className)
 	c.StyleStack = append(c.StyleStack, curStyle) // Push style onto stack
 	return nil
 }
@@ -578,6 +676,15 @@ func (c *IconCursor) readStartElement(se xml.StartElement) (err error) {
 	return
 }
 
+func (c *IconCursor) adaptClasses(pathStyle *PathStyle, className string) {
+	if className == "" || len(c.icon.classes) == 0 {
+		return
+	}
+	for k, v := range c.icon.classes[className] {
+		c.readStyleAttr(pathStyle, k, v)
+	}
+}
+
 // ReadIconStream reads the Icon from the given io.Reader
 // This only supports a sub-set of SVG, but
 // is enough to draw many icons. If errMode is provided,
@@ -590,6 +697,7 @@ func ReadIconStream(stream io.Reader, errMode ...ErrorMode) (*SvgIcon, error) {
 	if len(errMode) > 0 {
 		cursor.ErrorMode = errMode[0]
 	}
+	classInfo := ""
 	decoder := xml.NewDecoder(stream)
 	decoder.CharsetReader = charset.NewReaderLabel
 	for {
@@ -613,6 +721,9 @@ func ReadIconStream(stream io.Reader, errMode ...ErrorMode) (*SvgIcon, error) {
 			if err != nil {
 				return icon, err
 			}
+			if se.Name.Local == "style" && cursor.inDefs {
+				cursor.inDefsStyle = true
+			}
 		case xml.EndElement:
 			// pop style
 			cursor.StyleStack = cursor.StyleStack[:len(cursor.StyleStack)-1]
@@ -635,17 +746,83 @@ func ReadIconStream(stream io.Reader, errMode ...ErrorMode) (*SvgIcon, error) {
 				cursor.inDefs = false
 			case "radialGradient", "linearGradient":
 				cursor.inGrad = false
+
+			case "style":
+				if cursor.inDefsStyle {
+					icon.classes, err = parseClasses(classInfo)
+					if err != nil {
+						return icon, err
+					}
+					cursor.inDefsStyle = false
+				}
 			}
 		case xml.CharData:
-			if cursor.inTitleText == true {
+			if cursor.inTitleText {
 				icon.Titles[len(icon.Titles)-1] += string(se)
 			}
-			if cursor.inDescText == true {
+			if cursor.inDescText {
 				icon.Descriptions[len(icon.Descriptions)-1] += string(se)
+			}
+			if cursor.inDefsStyle {
+				classInfo = string(se)
 			}
 		}
 	}
 	return icon, nil
+}
+
+func parseClasses(data string) (map[string]styleAttribute, error) {
+	res := map[string]styleAttribute{}
+	arr := strings.Split(data, "}")
+	for _, v := range arr {
+		v = strings.TrimSpace(v)
+		if v == "" {
+			continue
+		}
+		valueIndex := strings.Index(v, "{")
+		if valueIndex == -1 || valueIndex == len(v)-1 {
+			return res, errors.New(v + "}: invalid map format in class definitions")
+		}
+		classesStr := v[:valueIndex]
+		attrStr := v[valueIndex+1:]
+		attrMap, err := parseAttrs(attrStr)
+		if err != nil {
+			return res, err
+		}
+		classes := strings.Split(classesStr, ",")
+		for _, class := range classes {
+			class = strings.TrimSpace(class)
+			if len(class) > 0 && class[0] == '.' {
+				class = class[1:]
+			}
+			for attrKey, attrVal := range attrMap {
+				if res[class] == nil {
+					res[class] = make(styleAttribute, len(attrMap))
+				}
+				res[class][attrKey] = attrVal
+			}
+		}
+	}
+	return res, nil
+}
+
+func parseAttrs(attrStr string) (styleAttribute, error) {
+	arr := strings.Split(attrStr, ";")
+	res := make(styleAttribute, len(arr))
+	for _, kv := range arr {
+		kv = strings.TrimSpace(kv)
+		if kv == "" {
+			continue
+		}
+		tmp := strings.SplitN(kv, ":", 2)
+		if len(tmp) != 2 {
+			return res, errors.New(kv + ": invalid attribute format")
+		}
+		k := strings.TrimSpace(tmp[0])
+		v := strings.TrimSpace(tmp[1])
+		res[k] = v
+	}
+	return res, nil
 }
 
 // ReadIcon reads the Icon from the named file
@@ -1026,10 +1203,10 @@ var (
 				return err
 			}
 		}
-		if setFx == false { // set fx to cx by default
+		if !setFx { // set fx to cx by default
 			c.grad.Points[2] = c.grad.Points[0]
 		}
-		if setFy == false { // set fy to cy by default
+		if !setFy { // set fy to cy by default
 			c.grad.Points[3] = c.grad.Points[1]
 		}
 		return nil

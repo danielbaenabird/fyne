@@ -109,9 +109,6 @@ func (s *IconSet) encodeIcons() error {
 	}
 	buf := bytes.NewBuffer(nil)
 	for _, icon := range s.Icons {
-		if icon == nil {
-			continue
-		}
 		if _, err := icon.WriteTo(buf); err != nil {
 			return err
 		}

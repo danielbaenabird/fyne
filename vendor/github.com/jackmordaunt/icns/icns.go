@@ -4,7 +4,6 @@ import (
 	"errors"
 	"image"
 	"io"
-	"sync"
 
 	"github.com/nfnt/resize"
 )
@@ -62,26 +61,19 @@ func NewIconSet(img image.Image, interp InterpolationFunction) (*IconSet, error)
 	if biggest == 0 {
 		return nil, ErrImageTooSmall{image: img, need: 16}
 	}
-	icons := make([]*Icon, len(osTypes))
-	work := sync.WaitGroup{}
-	for ii, size := range sizesFrom(biggest) {
+	icons := []*Icon{}
+	for _, size := range sizesFrom(biggest) {
 		t, ok := getTypeFromSize(size)
 		if !ok {
 			continue
 		}
-		ii := ii
-		size := size
-		work.Add(1)
-		go func() {
-			iconImg := resize.Resize(size, size, img, interp)
-			icons[ii] = &Icon{
-				Type:  t,
-				Image: iconImg,
-			}
-			work.Done()
-		}()
+		iconImg := resize.Resize(size, size, img, interp)
+		icon := &Icon{
+			Type:  t,
+			Image: iconImg,
+		}
+		icons = append(icons, icon)
 	}
-	work.Wait()
 	iconset := &IconSet{
 		Icons: icons,
 	}
@@ -101,7 +93,6 @@ var sizes = []uint{
 	1024,
 	512,
 	256,
-	128,
 	64,
 	32,
 }

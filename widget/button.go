@@ -56,9 +56,9 @@ var _ fyne.Focusable = (*Button)(nil)
 // Button widget has a text label and triggers an event func when clicked
 type Button struct {
 	DisableableWidget
-	Text            string
-	Icon            fyne.Resource
-	BackgroundColor fyne.Color
+	Text    string
+	Icon    fyne.Resource
+	BgColor color.Color
 	// Specify how prominent the button should be, High will highlight the button and Low will remove some decoration.
 	//
 	// Since: 1.4
@@ -74,10 +74,23 @@ type Button struct {
 
 // NewButton creates a new button widget with the set label and tap handler
 func NewButton(label string, tapped func()) *Button {
+	return NewButtonColored(label, theme.ButtonColor(), tapped)
 	button := &Button{
-		Text:            label,
-		OnTapped:        tapped,
-		BackgroundColor: theme.ButtonColor(),
+		Text:     label,
+		OnTapped: tapped,
+		BgColor:  theme.ButtonColor(),
+	}
+
+	button.ExtendBaseWidget(button)
+	return button
+}
+
+// NewButtonColored creates a new colored button widget with the set label and tap handler
+func NewButtonColored(label string, rgba color.Color, tapped func()) *Button {
+	button := &Button{
+		Text:     label,
+		OnTapped: tapped,
+		BgColor:  rgba,
 	}
 
 	button.ExtendBaseWidget(button)
@@ -104,7 +117,7 @@ func (b *Button) CreateRenderer() fyne.WidgetRenderer {
 	text := NewRichText(seg)
 	text.inset = fyne.NewSize(theme.Padding()*2, theme.Padding()*2)
 
-	background := canvas.NewRectangle(b.BackgroundColor)
+	background := canvas.NewRectangle(b.BgColor)
 	tapBG := canvas.NewRectangle(color.Transparent)
 	b.tapAnim = newButtonTapAnimation(tapBG, b)
 	b.tapAnim.Curve = fyne.AnimationEaseOut
