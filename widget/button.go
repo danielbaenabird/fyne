@@ -56,8 +56,9 @@ var _ fyne.Focusable = (*Button)(nil)
 // Button widget has a text label and triggers an event func when clicked
 type Button struct {
 	DisableableWidget
-	Text string
-	Icon fyne.Resource
+	Text            string
+	Icon            fyne.Resource
+	BackgroundColor fyne.Color
 	// Specify how prominent the button should be, High will highlight the button and Low will remove some decoration.
 	//
 	// Since: 1.4
@@ -74,8 +75,9 @@ type Button struct {
 // NewButton creates a new button widget with the set label and tap handler
 func NewButton(label string, tapped func()) *Button {
 	button := &Button{
-		Text:     label,
-		OnTapped: tapped,
+		Text:            label,
+		OnTapped:        tapped,
+		BackgroundColor: theme.ButtonColor(),
 	}
 
 	button.ExtendBaseWidget(button)
@@ -102,7 +104,7 @@ func (b *Button) CreateRenderer() fyne.WidgetRenderer {
 	text := NewRichText(seg)
 	text.inset = fyne.NewSize(theme.Padding()*2, theme.Padding()*2)
 
-	background := canvas.NewRectangle(theme.ButtonColor())
+	background := canvas.NewRectangle(b.BackgroundColor)
 	tapBG := canvas.NewRectangle(color.Transparent)
 	b.tapAnim = newButtonTapAnimation(tapBG, b)
 	b.tapAnim.Curve = fyne.AnimationEaseOut
