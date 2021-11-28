@@ -56,9 +56,10 @@ var _ fyne.Focusable = (*Button)(nil)
 // Button widget has a text label and triggers an event func when clicked
 type Button struct {
 	DisableableWidget
-	Text    string
-	Icon    fyne.Resource
-	BgColor color.Color
+	Text       string
+	Icon       fyne.Resource
+	BgColor    color.Color
+	usingTheme bool
 	// Specify how prominent the button should be, High will highlight the button and Low will remove some decoration.
 	//
 	// Since: 1.4
@@ -74,11 +75,11 @@ type Button struct {
 
 // NewButton creates a new button widget with the set label and tap handler
 func NewButton(label string, tapped func()) *Button {
-	return NewButtonColored(label, theme.ButtonColor(), tapped)
 	button := &Button{
-		Text:     label,
-		OnTapped: tapped,
-		BgColor:  theme.ButtonColor(),
+		Text:       label,
+		OnTapped:   tapped,
+		BgColor:    theme.ButtonColor(),
+		usingTheme: true,
 	}
 
 	button.ExtendBaseWidget(button)
@@ -88,9 +89,10 @@ func NewButton(label string, tapped func()) *Button {
 // NewButtonColored creates a new colored button widget with the set label and tap handler
 func NewButtonColored(label string, rgba color.Color, tapped func()) *Button {
 	button := &Button{
-		Text:     label,
-		OnTapped: tapped,
-		BgColor:  rgba,
+		Text:       label,
+		OnTapped:   tapped,
+		BgColor:    rgba,
+		usingTheme: false,
 	}
 
 	button.ExtendBaseWidget(button)
@@ -350,6 +352,9 @@ func (r *buttonRenderer) applyTheme() {
 }
 
 func (r *buttonRenderer) buttonColor() color.Color {
+	if !r.button.usingTheme {
+		return r.button.BgColor
+	}
 	switch {
 	case r.button.Disabled():
 		return theme.DisabledButtonColor()
