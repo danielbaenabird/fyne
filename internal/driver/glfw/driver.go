@@ -9,14 +9,14 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal/animation"
-	intapp "github.com/daninemonic/fyne/v2/internal/app"
-	"github.com/daninemonic/fyne/v2/internal/driver"
-	"github.com/daninemonic/fyne/v2/internal/driver/common"
-	"github.com/daninemonic/fyne/v2/internal/painter"
-	intRepo "github.com/daninemonic/fyne/v2/internal/repository"
-	"github.com/daninemonic/fyne/v2/storage/repository"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal/animation"
+	intapp "github.com/danielbaenabird/fyne/v2/internal/app"
+	"github.com/danielbaenabird/fyne/v2/internal/driver"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/common"
+	"github.com/danielbaenabird/fyne/v2/internal/painter"
+	intRepo "github.com/danielbaenabird/fyne/v2/internal/repository"
+	"github.com/danielbaenabird/fyne/v2/storage/repository"
 )
 
 const mainGoroutineID = 1

@@ -7,11 +7,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/driver/desktop"
-	"github.com/daninemonic/fyne/v2/internal/cache"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/driver/desktop"
+	"github.com/danielbaenabird/fyne/v2/internal/cache"
+	"github.com/danielbaenabird/fyne/v2/theme"
 )
 
 func TestNewScroll(t *testing.T) {

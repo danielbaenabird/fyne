@@ -1,9 +1,9 @@
 package dialog
 
 import (
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/theme"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2/widget"
 )
 
 func createTextDialog(title, message string, icon fyne.Resource, parent fyne.Window) Dialog {

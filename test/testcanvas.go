@@ -5,11 +5,11 @@ import (
 	"image/draw"
 	"sync"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/driver/desktop"
-	"github.com/daninemonic/fyne/v2/internal"
-	"github.com/daninemonic/fyne/v2/internal/app"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/driver/desktop"
+	"github.com/danielbaenabird/fyne/v2/internal"
+	"github.com/danielbaenabird/fyne/v2/internal/app"
+	"github.com/danielbaenabird/fyne/v2/theme"
 )
 
 var (

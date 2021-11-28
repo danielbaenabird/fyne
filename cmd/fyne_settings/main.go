@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/app"
-	"github.com/daninemonic/fyne/v2/cmd/fyne_settings/settings"
-	"github.com/daninemonic/fyne/v2/container"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/app"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne_settings/settings"
+	"github.com/danielbaenabird/fyne/v2/container"
 )
 
 func main() {

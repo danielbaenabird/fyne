@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/mobile"
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/templates"
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/util"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/mobile"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/templates"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/util"
 	"github.com/pkg/errors"
 	"golang.org/x/sys/execabs"
 )

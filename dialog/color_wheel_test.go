@@ -3,8 +3,8 @@ package dialog
 import (
 	"testing"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/test"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/test"
 )
 
 func Test_colorWheel_Layout(t *testing.T) {

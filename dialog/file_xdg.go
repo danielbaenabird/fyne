@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/storage"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/storage"
 
 	"golang.org/x/sys/execabs"
 )

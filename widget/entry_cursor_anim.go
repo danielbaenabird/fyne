@@ -5,10 +5,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	col "github.com/daninemonic/fyne/v2/internal/color"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	col "github.com/danielbaenabird/fyne/v2/internal/color"
+	"github.com/danielbaenabird/fyne/v2/theme"
 )
 
 const cursorInterruptTime = 300 * time.Millisecond

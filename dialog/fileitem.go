@@ -3,11 +3,11 @@ package dialog
 import (
 	"path/filepath"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/driver/desktop"
-	"github.com/daninemonic/fyne/v2/theme"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/driver/desktop"
+	"github.com/danielbaenabird/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2/widget"
 )
 
 const (

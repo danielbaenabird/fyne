@@ -6,7 +6,7 @@ package binding
 import (
 	"fmt"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 type stringFromBool struct {

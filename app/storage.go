@@ -3,9 +3,9 @@ package app
 import (
 	"os"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal"
-	"github.com/daninemonic/fyne/v2/storage"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal"
+	"github.com/danielbaenabird/fyne/v2/storage"
 )
 
 type store struct {

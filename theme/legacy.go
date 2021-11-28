@@ -3,7 +3,7 @@ package theme
 import (
 	"image/color"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 // FromLegacy returns a 2.0 Theme created from the given LegacyTheme data.

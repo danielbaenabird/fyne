@@ -1,4 +1,4 @@
-module github.com/daninemonic/fyne/v2
+module github.com/danielbaenabird/fyne/v2
 
 go 1.17
 

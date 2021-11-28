@@ -3,7 +3,7 @@ package binding
 import (
 	"testing"
 
-	"github.com/daninemonic/fyne/v2/storage"
+	"github.com/danielbaenabird/fyne/v2/storage"
 	"github.com/stretchr/testify/assert"
 )
 

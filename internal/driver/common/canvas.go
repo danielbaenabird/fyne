@@ -5,13 +5,13 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal"
-	"github.com/daninemonic/fyne/v2/internal/app"
-	"github.com/daninemonic/fyne/v2/internal/async"
-	"github.com/daninemonic/fyne/v2/internal/cache"
-	"github.com/daninemonic/fyne/v2/internal/driver"
-	"github.com/daninemonic/fyne/v2/internal/painter/gl"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal"
+	"github.com/danielbaenabird/fyne/v2/internal/app"
+	"github.com/danielbaenabird/fyne/v2/internal/async"
+	"github.com/danielbaenabird/fyne/v2/internal/cache"
+	"github.com/danielbaenabird/fyne/v2/internal/driver"
+	"github.com/danielbaenabird/fyne/v2/internal/painter/gl"
 )
 
 // SizeableCanvas defines a canvas with size related functions.

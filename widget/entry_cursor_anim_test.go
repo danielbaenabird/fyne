@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/daninemonic/fyne/v2/canvas"
-	col "github.com/daninemonic/fyne/v2/internal/color"
-	_ "github.com/daninemonic/fyne/v2/test"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	col "github.com/danielbaenabird/fyne/v2/internal/color"
+	_ "github.com/danielbaenabird/fyne/v2/test"
+	"github.com/danielbaenabird/fyne/v2/theme"
 	"github.com/stretchr/testify/assert"
 )
 

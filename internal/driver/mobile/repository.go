@@ -1,9 +1,9 @@
 package mobile
 
 import (
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 
-	"github.com/daninemonic/fyne/v2/storage/repository"
+	"github.com/danielbaenabird/fyne/v2/storage/repository"
 )
 
 // declare conformance with repository types

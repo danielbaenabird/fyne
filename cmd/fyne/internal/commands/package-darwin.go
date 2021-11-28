@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/templates"
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/util"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/templates"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/util"
 	"github.com/jackmordaunt/icns"
 	"github.com/pkg/errors"
 )

@@ -4,9 +4,9 @@ import (
 	"image/color"
 	"math"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/internal/painter"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/internal/painter"
 )
 
 func (p *glPainter) drawTextureWithDetails(o fyne.CanvasObject, creator func(canvasObject fyne.CanvasObject) Texture,

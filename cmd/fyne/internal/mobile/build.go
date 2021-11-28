@@ -177,18 +177,18 @@ func runBuildImpl(cmd *command) (*packages.Package, error) {
 		}
 	}
 
-	if !nmpkgs["github.com/daninemonic/fyne/v2/internal/driver/mobile/app"] {
-		return nil, fmt.Errorf(`%s does not import "github.com/daninemonic/fyne/v2/internal/driver/mobile/app"`, pkg.PkgPath)
+	if !nmpkgs["github.com/danielbaenabird/fyne/v2/internal/driver/mobile/app"] {
+		return nil, fmt.Errorf(`%s does not import "github.com/danielbaenabird/fyne/v2/internal/driver/mobile/app"`, pkg.PkgPath)
 	}
 
 	return pkg, nil
 }
 
-var nmRE = regexp.MustCompile(`[0-9a-f]{8} t _?(?:.*/vendor/)?(github.com/daninemonic/fyne/v2/internal/driver/mobile.*/[^.]*)`)
+var nmRE = regexp.MustCompile(`[0-9a-f]{8} t _?(?:.*/vendor/)?(github.com/danielbaenabird/fyne/v2/internal/driver/mobile.*/[^.]*)`)
 
 func extractPkgs(nm string, path string) (map[string]bool, error) {
 	if buildN {
-		return map[string]bool{"github.com/daninemonic/fyne/v2/internal/driver/mobile/app": true}, nil
+		return map[string]bool{"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/app": true}, nil
 	}
 	r, w := io.Pipe()
 	cmd := execabs.Command(nm, path)

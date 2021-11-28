@@ -3,13 +3,13 @@ package widget
 import (
 	"fmt"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/data/binding"
-	"github.com/daninemonic/fyne/v2/driver/desktop"
-	"github.com/daninemonic/fyne/v2/internal/cache"
-	"github.com/daninemonic/fyne/v2/internal/widget"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/data/binding"
+	"github.com/danielbaenabird/fyne/v2/driver/desktop"
+	"github.com/danielbaenabird/fyne/v2/internal/cache"
+	"github.com/danielbaenabird/fyne/v2/internal/widget"
+	"github.com/danielbaenabird/fyne/v2/theme"
 )
 
 type checkRenderer struct {

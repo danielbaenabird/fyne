@@ -1,6 +1,6 @@
 package desktop
 
-import "github.com/daninemonic/fyne/v2"
+import "github.com/danielbaenabird/fyne/v2"
 
 // Canvas defines the desktop specific extensions to a fyne.Canvas.
 type Canvas interface {

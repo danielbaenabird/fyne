@@ -4,14 +4,14 @@ import (
 	"image/color"
 	"testing"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/container"
-	"github.com/daninemonic/fyne/v2/internal/driver"
-	internal_widget "github.com/daninemonic/fyne/v2/internal/widget"
-	"github.com/daninemonic/fyne/v2/layout"
-	_ "github.com/daninemonic/fyne/v2/test"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/container"
+	"github.com/danielbaenabird/fyne/v2/internal/driver"
+	internal_widget "github.com/danielbaenabird/fyne/v2/internal/widget"
+	"github.com/danielbaenabird/fyne/v2/layout"
+	_ "github.com/danielbaenabird/fyne/v2/test"
+	"github.com/danielbaenabird/fyne/v2/widget"
 
 	"github.com/stretchr/testify/assert"
 )

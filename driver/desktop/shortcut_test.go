@@ -3,7 +3,7 @@ package desktop
 import (
 	"testing"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 func TestCustomShortcut_Shortcut(t *testing.T) {

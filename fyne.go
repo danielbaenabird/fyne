@@ -7,9 +7,9 @@
 //
 //   package main
 //
-//   import "github.com/daninemonic/fyne/v2/app"
-//   import "github.com/daninemonic/fyne/v2/container"
-//   import "github.com/daninemonic/fyne/v2/widget"
+//   import "github.com/danielbaenabird/fyne/v2/app"
+//   import "github.com/danielbaenabird/fyne/v2/container"
+//   import "github.com/danielbaenabird/fyne/v2/widget"
 //
 //   func main() {
 //   	a := app.New()
@@ -25,4 +25,4 @@
 //
 //   	w.ShowAndRun()
 //   }
-package fyne // import "github.com/daninemonic/fyne/v2"
+package fyne // import "github.com/danielbaenabird/fyne/v2"

@@ -2,9 +2,9 @@
 package main
 
 import (
-	"github.com/daninemonic/fyne/v2/app"
-	"github.com/daninemonic/fyne/v2/container"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2/app"
+	"github.com/danielbaenabird/fyne/v2/container"
+	"github.com/danielbaenabird/fyne/v2/widget"
 )
 
 func main() {

@@ -9,7 +9,7 @@ import (
 	"runtime"
 	"text/template"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 const itemBindTemplate = `
@@ -628,7 +628,7 @@ func main() {
 	}
 	defer itemFile.Close()
 	itemFile.WriteString(`
-import "github.com/daninemonic/fyne/v2"
+import "github.com/danielbaenabird/fyne/v2"
 `)
 	convertFile, err := newFile("convert")
 	if err != nil {
@@ -639,7 +639,7 @@ import "github.com/daninemonic/fyne/v2"
 import (
 	"fmt"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 `)
 	prefFile, err := newFile("preference")
@@ -651,7 +651,7 @@ import (
 import (
 	"sync"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 const keyTypeMismatchError = "A previous preference binding exists with different type for key: "
@@ -663,7 +663,7 @@ const keyTypeMismatchError = "A previous preference binding exists with differen
 	}
 	defer listFile.Close()
 	listFile.WriteString(`
-import "github.com/daninemonic/fyne/v2"
+import "github.com/danielbaenabird/fyne/v2"
 `)
 
 	item := template.Must(template.New("item").Parse(itemBindTemplate))

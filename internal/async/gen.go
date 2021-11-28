@@ -24,7 +24,7 @@ func main() {
 		"chan_canvasobject.go": data{
 			Type:    "fyne.CanvasObject",
 			Name:    "CanvasObject",
-			Imports: `import "github.com/daninemonic/fyne/v2"`,
+			Imports: `import "github.com/danielbaenabird/fyne/v2"`,
 		},
 		"chan_func.go": data{
 			Type:    "func()",

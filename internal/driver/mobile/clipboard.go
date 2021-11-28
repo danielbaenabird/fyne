@@ -1,7 +1,7 @@
 package mobile
 
 import (
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 // Declare conformity with Clipboard interface

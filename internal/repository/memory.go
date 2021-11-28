@@ -1,9 +1,9 @@
 package repository
 
 import (
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/storage"
-	"github.com/daninemonic/fyne/v2/storage/repository"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/storage"
+	"github.com/danielbaenabird/fyne/v2/storage/repository"
 
 	"fmt"
 	"io"

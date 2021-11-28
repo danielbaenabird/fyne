@@ -1,8 +1,8 @@
 package painter
 
 import (
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
 )
 
 // VectorPad returns the number of additional points that should be added around a texture.

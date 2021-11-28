@@ -7,12 +7,12 @@ import (
 	"math"
 	"math/cmplx"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/driver/desktop"
-	internalwidget "github.com/daninemonic/fyne/v2/internal/widget"
-	"github.com/daninemonic/fyne/v2/theme"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/driver/desktop"
+	internalwidget "github.com/danielbaenabird/fyne/v2/internal/widget"
+	"github.com/danielbaenabird/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2/widget"
 )
 
 var _ fyne.Widget = (*colorWheel)(nil)

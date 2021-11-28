@@ -6,14 +6,14 @@ import (
 	"log"
 	"net/url"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/app"
-	"github.com/daninemonic/fyne/v2/cmd/fyne_demo/tutorials"
-	"github.com/daninemonic/fyne/v2/cmd/fyne_settings/settings"
-	"github.com/daninemonic/fyne/v2/container"
-	"github.com/daninemonic/fyne/v2/layout"
-	"github.com/daninemonic/fyne/v2/theme"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/app"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne_demo/tutorials"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne_settings/settings"
+	"github.com/danielbaenabird/fyne/v2/container"
+	"github.com/danielbaenabird/fyne/v2/layout"
+	"github.com/danielbaenabird/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2/widget"
 )
 
 const preferenceCurrentTutorial = "currentTutorial"

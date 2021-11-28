@@ -1,6 +1,6 @@
 package widget
 
-import "github.com/daninemonic/fyne/v2"
+import "github.com/danielbaenabird/fyne/v2"
 
 // BaseRenderer is a renderer base providing the most common implementations of a part of the
 // widget.Renderer interface.

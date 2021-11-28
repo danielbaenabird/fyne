@@ -8,13 +8,13 @@
 package app
 
 import (
-	"github.com/daninemonic/fyne/v2/internal/async"
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/event/lifecycle"
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/event/size"
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/gl"
+	"github.com/danielbaenabird/fyne/v2/internal/async"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/event/lifecycle"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/event/size"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/gl"
 
 	// Initialize necessary mobile functionality, such as logging.
-	_ "github.com/daninemonic/fyne/v2/internal/driver/mobile/mobileinit"
+	_ "github.com/danielbaenabird/fyne/v2/internal/driver/mobile/mobileinit"
 )
 
 // Main is called by the main.main function to run the mobile application.

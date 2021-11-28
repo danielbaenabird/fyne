@@ -3,12 +3,12 @@ package widget
 import (
 	"testing"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/data/binding"
-	"github.com/daninemonic/fyne/v2/internal/painter/software"
-	"github.com/daninemonic/fyne/v2/test"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/data/binding"
+	"github.com/danielbaenabird/fyne/v2/internal/painter/software"
+	"github.com/danielbaenabird/fyne/v2/test"
+	"github.com/danielbaenabird/fyne/v2/theme"
 
 	"github.com/stretchr/testify/assert"
 )

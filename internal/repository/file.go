@@ -8,9 +8,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/storage"
-	"github.com/daninemonic/fyne/v2/storage/repository"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/storage"
+	"github.com/danielbaenabird/fyne/v2/storage/repository"
 )
 
 // fileSchemePrefix is used for when we need a hard-coded version of "file://"

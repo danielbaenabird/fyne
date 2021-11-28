@@ -25,10 +25,10 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/event/lifecycle"
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/event/paint"
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/event/size"
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/event/touch"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/event/lifecycle"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/event/paint"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/event/size"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/event/touch"
 )
 
 func init() {

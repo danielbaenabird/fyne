@@ -4,7 +4,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 // Declare conformity with Shortcut interface

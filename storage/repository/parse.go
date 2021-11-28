@@ -7,7 +7,7 @@ import (
 
 	uriParser "github.com/fredbi/uri"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 // NewFileURI implements the back-end logic to storage.NewFileURI, which you

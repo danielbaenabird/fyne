@@ -4,12 +4,12 @@ import (
 	"image"
 	"sync"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal/driver"
-	"github.com/daninemonic/fyne/v2/internal/painter"
-	"github.com/daninemonic/fyne/v2/internal/painter/software"
-	intRepo "github.com/daninemonic/fyne/v2/internal/repository"
-	"github.com/daninemonic/fyne/v2/storage/repository"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal/driver"
+	"github.com/danielbaenabird/fyne/v2/internal/painter"
+	"github.com/danielbaenabird/fyne/v2/internal/painter/software"
+	intRepo "github.com/danielbaenabird/fyne/v2/internal/repository"
+	"github.com/danielbaenabird/fyne/v2/storage/repository"
 )
 
 // SoftwarePainter describes a simple type that can render canvases

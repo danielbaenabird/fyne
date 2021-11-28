@@ -6,7 +6,7 @@ package binding
 import (
 	"sync"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 const keyTypeMismatchError = "A previous preference binding exists with different type for key: "

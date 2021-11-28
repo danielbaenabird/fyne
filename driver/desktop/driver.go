@@ -1,7 +1,7 @@
 // Package desktop provides desktop specific driver functionality.
 package desktop
 
-import "github.com/daninemonic/fyne/v2"
+import "github.com/danielbaenabird/fyne/v2"
 
 // Driver represents the extended capabilities of a desktop driver
 type Driver interface {

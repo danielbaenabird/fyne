@@ -1,8 +1,8 @@
 package widget
 
 import (
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal/widget"
 )
 
 var _ fyne.Widget = (*PopUpMenu)(nil)

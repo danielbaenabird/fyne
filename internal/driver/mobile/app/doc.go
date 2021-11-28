@@ -82,4 +82,4 @@ response to lifecycle events. Such packages should call:
 	app.RegisterFilter(etc)
 in an init function inside that package.
 */
-package app // import "github.com/daninemonic/fyne/v2/internal/driver/mobile/app"
+package app // import "github.com/danielbaenabird/fyne/v2/internal/driver/mobile/app"

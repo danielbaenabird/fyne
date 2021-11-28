@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

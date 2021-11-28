@@ -7,10 +7,10 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/container"
-	"github.com/daninemonic/fyne/v2/internal/cache"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/container"
+	"github.com/danielbaenabird/fyne/v2/internal/cache"
+	"github.com/danielbaenabird/fyne/v2/widget"
 
 	"github.com/stretchr/testify/assert"
 )

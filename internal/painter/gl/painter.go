@@ -5,8 +5,8 @@ import (
 	"image"
 	"math"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal/driver"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal/driver"
 )
 
 // Painter defines the functionality of our OpenGL based renderer

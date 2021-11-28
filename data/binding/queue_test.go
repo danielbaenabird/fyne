@@ -6,7 +6,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/daninemonic/fyne/v2/internal/async"
+	"github.com/danielbaenabird/fyne/v2/internal/async"
 	"github.com/stretchr/testify/assert"
 )
 

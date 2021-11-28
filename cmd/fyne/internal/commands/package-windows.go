@@ -7,7 +7,7 @@ import (
 	"runtime"
 
 	ico "github.com/Kodeworks/golang-image-ico"
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/templates"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/templates"
 	"github.com/josephspurrier/goversioninfo"
 	"github.com/pkg/errors"
 	"golang.org/x/sys/execabs"

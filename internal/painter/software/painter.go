@@ -3,10 +3,10 @@ package software
 import (
 	"image"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/internal"
-	"github.com/daninemonic/fyne/v2/internal/driver"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/internal"
+	"github.com/danielbaenabird/fyne/v2/internal/driver"
 )
 
 // Painter is a simple software painter that can paint a canvas in memory.

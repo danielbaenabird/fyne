@@ -1,8 +1,8 @@
 package common
 
 import (
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal/cache"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal/cache"
 )
 
 // CanvasForObject returns the canvas for the specified object.

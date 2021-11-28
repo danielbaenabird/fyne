@@ -11,11 +11,11 @@ import (
 	"image/draw"
 	"math"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/internal/cache"
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/gl"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/internal/cache"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/gl"
+	"github.com/danielbaenabird/fyne/v2/theme"
 )
 
 // Buffer represents a GL buffer

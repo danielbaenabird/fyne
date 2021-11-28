@@ -3,11 +3,11 @@ package tutorials
 import (
 	"time"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/container"
-	"github.com/daninemonic/fyne/v2/driver/desktop"
-	"github.com/daninemonic/fyne/v2/layout"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/container"
+	"github.com/danielbaenabird/fyne/v2/driver/desktop"
+	"github.com/danielbaenabird/fyne/v2/layout"
+	"github.com/danielbaenabird/fyne/v2/widget"
 )
 
 func windowScreen(_ fyne.Window) fyne.CanvasObject {

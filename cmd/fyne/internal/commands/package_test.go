@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/metadata"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/metadata"
 )
 
 func Test_calculateExeName(t *testing.T) {

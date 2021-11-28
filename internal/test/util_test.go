@@ -8,13 +8,13 @@ import (
 	"os"
 	"testing"
 
-	"github.com/daninemonic/fyne/v2/internal/painter"
+	"github.com/danielbaenabird/fyne/v2/internal/painter"
 	"github.com/goki/freetype"
 	"github.com/goki/freetype/truetype"
 	"github.com/stretchr/testify/require"
 
-	"github.com/daninemonic/fyne/v2/internal/test"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2/internal/test"
+	"github.com/danielbaenabird/fyne/v2/theme"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -3,11 +3,11 @@ package app_test
 import (
 	"testing"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/container"
-	"github.com/daninemonic/fyne/v2/internal/app"
-	internalWidget "github.com/daninemonic/fyne/v2/internal/widget"
-	"github.com/daninemonic/fyne/v2/widget"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/container"
+	"github.com/danielbaenabird/fyne/v2/internal/app"
+	internalWidget "github.com/danielbaenabird/fyne/v2/internal/widget"
+	"github.com/danielbaenabird/fyne/v2/widget"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

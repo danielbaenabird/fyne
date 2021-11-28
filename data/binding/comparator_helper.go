@@ -1,6 +1,6 @@
 package binding
 
-import "github.com/daninemonic/fyne/v2"
+import "github.com/danielbaenabird/fyne/v2"
 
 func compareURI(v1, v2 fyne.URI) bool {
 	if v1 == nil && v1 == v2 {

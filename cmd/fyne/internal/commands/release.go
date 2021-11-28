@@ -9,10 +9,10 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/mobile"
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/templates"
-	"github.com/daninemonic/fyne/v2/cmd/fyne/internal/util"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/mobile"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/templates"
+	"github.com/danielbaenabird/fyne/v2/cmd/fyne/internal/util"
 	"github.com/urfave/cli/v2"
 	"golang.org/x/sys/execabs"
 )

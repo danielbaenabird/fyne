@@ -10,10 +10,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/daninemonic/fyne/v2/canvas"
-	intRepo "github.com/daninemonic/fyne/v2/internal/repository"
-	"github.com/daninemonic/fyne/v2/storage"
-	"github.com/daninemonic/fyne/v2/storage/repository"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	intRepo "github.com/danielbaenabird/fyne/v2/internal/repository"
+	"github.com/danielbaenabird/fyne/v2/storage"
+	"github.com/danielbaenabird/fyne/v2/storage/repository"
 
 	"github.com/stretchr/testify/assert"
 )

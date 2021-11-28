@@ -4,10 +4,10 @@ import (
 	"image/color"
 	"time"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/layout"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/layout"
+	"github.com/danielbaenabird/fyne/v2/theme"
 )
 
 func rgbGradient(x, y, w, h int) color.Color {

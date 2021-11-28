@@ -6,11 +6,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal"
-	"github.com/daninemonic/fyne/v2/internal/app"
-	"github.com/daninemonic/fyne/v2/internal/cache"
-	"github.com/daninemonic/fyne/v2/internal/painter"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal"
+	"github.com/danielbaenabird/fyne/v2/internal/app"
+	"github.com/danielbaenabird/fyne/v2/internal/cache"
+	"github.com/danielbaenabird/fyne/v2/internal/painter"
 
 	"github.com/go-gl/glfw/v3.3/glfw"
 )

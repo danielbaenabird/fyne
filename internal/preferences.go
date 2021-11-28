@@ -3,7 +3,7 @@ package internal
 import (
 	"sync"
 
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 // InMemoryPreferences provides an implementation of the fyne.Preferences API that is stored in memory.

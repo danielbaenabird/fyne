@@ -23,9 +23,9 @@ import (
 	"os"
 	"unsafe"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/internal/driver/mobile/app"
-	"github.com/daninemonic/fyne/v2/storage/repository"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/internal/driver/mobile/app"
+	"github.com/danielbaenabird/fyne/v2/storage/repository"
 )
 
 type javaStream struct {

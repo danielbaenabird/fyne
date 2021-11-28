@@ -2,7 +2,7 @@
 package container
 
 import (
-	"github.com/daninemonic/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2"
 )
 
 // New returns a new Container instance holding the specified CanvasObjects which will be laid out according to the specified Layout.

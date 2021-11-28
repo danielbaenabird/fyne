@@ -5,13 +5,13 @@ import (
 	"image/color"
 	"testing"
 
-	"github.com/daninemonic/fyne/v2"
-	"github.com/daninemonic/fyne/v2/canvas"
-	"github.com/daninemonic/fyne/v2/internal/cache"
-	col "github.com/daninemonic/fyne/v2/internal/color"
-	"github.com/daninemonic/fyne/v2/internal/widget"
-	"github.com/daninemonic/fyne/v2/test"
-	"github.com/daninemonic/fyne/v2/theme"
+	"github.com/danielbaenabird/fyne/v2"
+	"github.com/danielbaenabird/fyne/v2/canvas"
+	"github.com/danielbaenabird/fyne/v2/internal/cache"
+	col "github.com/danielbaenabird/fyne/v2/internal/color"
+	"github.com/danielbaenabird/fyne/v2/internal/widget"
+	"github.com/danielbaenabird/fyne/v2/test"
+	"github.com/danielbaenabird/fyne/v2/theme"
 
 	"github.com/stretchr/testify/assert"
 )
